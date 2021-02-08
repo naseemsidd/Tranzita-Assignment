@@ -19,7 +19,6 @@ app.get('/', function(req, res){
 });
 app.post('/save-feedback',function(req,res){
    dbConn.then(function(db){
-      delete req.body._id;
       db.collection('details').insertOne(req.body);
    });
    res.send("Data recieved:\n" + JSON.stringify(req.body));
