@@ -1,5 +1,8 @@
 var express = require('express');
 var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 const mongoose = require("mongoose");
 
 mongoose.connect("mongodb+srv://naseem:naseem123@cluster0.iq1il.mongodb.net/naseem?retryWrites=true&w=majority",{
@@ -14,15 +17,27 @@ mongoose.connect("mongodb+srv://naseem:naseem123@cluster0.iq1il.mongodb.net/nase
     }
 });
 
-app.get('/', function(req, res){
+var nameSchema = new mongoose.Schema({
+   firstName: String,
+   lastNameName: String
+  });
+  var User = mongoose.model("User", nameSchema);
+
+  app.get('/', function(req, res){
    res.sendFile("index.html",{root:__dirname});
 });
-app.post('/save-feedback',function(req,res){
-   dbConn.then(function(db){
-      db.collection('details').insertOne(req.body);
+
+app.post("/addname", (req, res) => {
+   var myData = new User(req.body);
+   myData.save()
+   .then(item => {
+   res.send("item saved to database");
+   })
+   .catch(err => {
+   res.status(400).send("unable to save to database");
    });
-   res.send("Data recieved:\n" + JSON.stringify(req.body));
-});
+  });
+
 
 app.get('/', function(req, res){
    res.send("Hello world!");
