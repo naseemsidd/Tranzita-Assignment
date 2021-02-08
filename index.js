@@ -14,8 +14,12 @@ mongoose.connect("mongodb+srv://naseem:naseem123@cluster0.iq1il.mongodb.net/nase
 });
 
 app.get('/', function(req, res){
-   res.send("Hello world!");
+   res.sendFile("index.html");
 });
+
+// app.get('/', function(req, res){
+//    res.send("Hello world!");
+// });
 
 // app.listen(3000);
 app.listen(process.env.PORT);
