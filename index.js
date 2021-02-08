@@ -17,5 +17,11 @@ app.get('/', function(req, res){
    res.send("Hello world!");
 });
 
+app.post('/views/details.html',(req,res)=>{
+   data.push(req.body.item)
+   res.send(data)
+   console.log(data)
+})
+
 // app.listen(3000);
 app.listen(process.env.PORT);
