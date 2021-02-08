@@ -19,7 +19,7 @@ mongoose.connect("mongodb+srv://naseem:naseem123@cluster0.iq1il.mongodb.net/nase
 
 var nameSchema = new mongoose.Schema({
    firstName: String,
-   lastNameName: String
+   lastName: String
   });
   var User = mongoose.model("User", nameSchema);
 
