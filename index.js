@@ -17,6 +17,13 @@ mongoose.connect("mongodb+srv://naseem:naseem123@cluster0.iq1il.mongodb.net/nase
 app.get('/', function(req, res){
    res.sendFile("index.html",{root:__dirname});
 });
+app.post('/save-feedback',function(req,res){
+   dbConn.then(function(db){
+      delete req.body._id;
+      db.collection('details').insertOne(req.body);
+   });
+   res.send("Data recieved:\n" + JSON.stringify(req.body));
+});
 
 app.get('/', function(req, res){
    res.send("Hello world!");
