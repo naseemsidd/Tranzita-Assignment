@@ -1,12 +1,8 @@
-var express = require('express')
-var app = express()
-var port = 5000
+var express = require('express');
+var app = express();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.get('/', function(req, res){
+   res.send("Hello world!");
+});
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-
-})
+app.listen(3000);
