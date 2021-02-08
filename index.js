@@ -39,9 +39,9 @@ app.post("/addname", (req, res) => {
   });
 
 
-app.get('/', function(req, res){
-   res.send("Hello world!");
-});
+// app.get('/', function(req, res){
+//    res.send("Hello world!");
+// });
 
 
 // app.listen(3000);
