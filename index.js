@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 
 mongoose.connect("mongodb+srv://naseem:naseem123@cluster0.iq1il.mongodb.net/naseem?retryWrites=true&w=majority",{
    useNewUrlParser: true
-}, function(error){
+},
+ function(error){
     if(error){
        console.log(error);
     }
