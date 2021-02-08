@@ -17,9 +17,16 @@ app.get('/', function(req, res){
    res.sendFile("index.html");
 });
 
+<<<<<<< HEAD
 // app.get('/', function(req, res){
 //    res.send("Hello world!");
 // });
+=======
+app.get('/',function(req,res){
+res.sendFile(details.html);
+
+});
+>>>>>>> 0262abee04bcf2839e168b8dae37de9e69b787ca
 
 // app.listen(3000);
 app.listen(process.env.PORT);
