@@ -7,3 +7,7 @@ A simple ExpressJS application that accepts the first name and last name in inpu
     git clone https://github.com/naseemsidd/Tranzita-Assignment.git
     cd ./Tranzita-Assignment
     heroku open --app salty-harbor-50019
+
+# One command to download and execute project
+
+    git clone https://github.com/naseemsidd/Tranzita-Assignment.git && cd ./Tranzita-Assignment && heroku open --app salty-harbor-50019
